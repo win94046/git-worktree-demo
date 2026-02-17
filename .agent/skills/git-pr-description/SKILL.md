@@ -113,36 +113,43 @@ git diff master..HEAD
 
 ## 測試步驟
 
-### 測試案例 1：[測試情境名稱]
+> **規則：必須為「修改的內容」中列出的每一個模組 / 元件都產生至少一個對應的測試案例，確保所有變更皆被涵蓋。**
+
+### 測試案例 1：[針對模組 A 的測試情境]
 
 1. 操作步驟一
 2. 操作步驟二
-3. 預期結果
+3. **預期結果**：描述預期行為
 
-### 測試案例 2：[測試情境名稱]
+### 測試案例 2：[針對模組 B 的測試情境]
 
 1. 操作步驟一
 2. 操作步驟二
-3. 預期結果
+3. **預期結果**：描述預期行為
+
+### 測試案例 N：[依此類推，直到所有變更模組皆有對應測試]
 ```
 
 ---
 
 ### 6. 輸出結果
 
-使用 `notify_user` 將完整的 PR Title + Description 展示給使用者。
+將完整的 PR Title + Description 以 **markdown code block** 的形式輸出，讓使用者可以直接複製貼上到 GitHub PR。
 
-輸出格式：
+輸出格式（整段用 markdown code block 包裹）：
 
-```
-📝 PR Title:
+````
+```markdown
 <title>
 
-📄 PR Description:
-<description 完整內容>
+<description 完整 markdown 內容，包含 ##、###、列表等格式>
 ```
+````
 
-使用者可要求調整任何部分後再複製使用。
+**注意事項：**
+- 不要在 code block 外面加額外的 `📝 PR Title:` 等前綴，直接輸出可複製的 markdown
+- code block 內的第一行為 PR Title，空一行後接 Description
+- 使用者可要求調整任何部分後再複製使用
 
 ---
 
